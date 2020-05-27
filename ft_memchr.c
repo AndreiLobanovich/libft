@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: htinisha <htinisha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/26 03:42:09 by htinisha          #+#    #+#             */
+/*   Updated: 2020/05/26 03:42:09 by htinisha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void    *ft_memchr(const void *s, int c, size_t n)
 {
-    unsigned char *p;
+    unsigned char *str;
 
-    p = (unsigned char*)s;
-    while(n--)
-        if( *p != (unsigned char)c )
-            p++;
-        else
-            return p;
-    return 0;
+    str = (unsigned char *)s;
+    while (n--)
+    {
+        if (*str++ == (unsigned char)c)
+            return (str - 1);
+    }
+    return (NULL);
 }

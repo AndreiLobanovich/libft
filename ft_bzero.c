@@ -1,6 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: htinisha <htinisha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/26 03:41:36 by htinisha          #+#    #+#             */
+/*   Updated: 2020/05/26 03:41:36 by htinisha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void    ft_bzero(void *str, size_t n)
 {
-    ft_memset(s, 0, n);
+    unsigned char *s;
+
+    s = (unsigned char*)str;
+    while (n--)
+        *s++ = '\0';
 }
